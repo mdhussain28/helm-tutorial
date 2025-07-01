@@ -1,0 +1,15 @@
+replicaCount: 4
+
+image:
+  repository: nginxinc/nginx-unprivileged
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  name: nginx-service
+  type: NodePort
+  port: 80
+  targetPort: 80
+
+env:
+  name: prod
